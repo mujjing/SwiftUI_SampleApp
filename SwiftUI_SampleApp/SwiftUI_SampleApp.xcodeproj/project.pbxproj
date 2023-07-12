@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9E1E95E2A5EEE6500AE5DD4 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9E1E95B2A5EEE6500AE5DD4 /* Inter-Regular.ttf */; };
+		A9E1E95F2A5EEE6500AE5DD4 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9E1E95C2A5EEE6500AE5DD4 /* Poppins-Bold.ttf */; };
+		A9E1E9602A5EEE6500AE5DD4 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9E1E95D2A5EEE6500AE5DD4 /* Inter-SemiBold.ttf */; };
+		A9E1E9632A5EF05800AE5DD4 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E1E9622A5EF05800AE5DD4 /* CustomFont.swift */; };
 		A9EDB2CC2A5C506100C1A91E /* SwiftUI_SampleAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDB2CB2A5C506100C1A91E /* SwiftUI_SampleAppApp.swift */; };
 		A9EDB2CE2A5C506100C1A91E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDB2CD2A5C506100C1A91E /* ContentView.swift */; };
 		A9EDB2D02A5C506100C1A91E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9EDB2CF2A5C506100C1A91E /* Assets.xcassets */; };
@@ -23,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A9E1E95B2A5EEE6500AE5DD4 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		A9E1E95C2A5EEE6500AE5DD4 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		A9E1E95D2A5EEE6500AE5DD4 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		A9E1E9612A5EEE8C00AE5DD4 /* SwiftUI-SampleApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI-SampleApp-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A9E1E9622A5EF05800AE5DD4 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		A9EDB2C82A5C506100C1A91E /* SwiftUI_SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9EDB2CB2A5C506100C1A91E /* SwiftUI_SampleAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_SampleAppApp.swift; sourceTree = "<group>"; };
 		A9EDB2CD2A5C506100C1A91E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9E1E95A2A5EEE6500AE5DD4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A9E1E95B2A5EEE6500AE5DD4 /* Inter-Regular.ttf */,
+				A9E1E95C2A5EEE6500AE5DD4 /* Poppins-Bold.ttf */,
+				A9E1E95D2A5EEE6500AE5DD4 /* Inter-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		A9EDB2BF2A5C506100C1A91E = {
 			isa = PBXGroup;
 			children = (
@@ -69,12 +88,15 @@
 		A9EDB2CA2A5C506100C1A91E /* SwiftUI_SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				A9E1E9612A5EEE8C00AE5DD4 /* SwiftUI-SampleApp-Info.plist */,
 				A9EDB2CB2A5C506100C1A91E /* SwiftUI_SampleAppApp.swift */,
 				A9EDB2CD2A5C506100C1A91E /* ContentView.swift */,
 				A9EDB2CF2A5C506100C1A91E /* Assets.xcassets */,
+				A9E1E95A2A5EEE6500AE5DD4 /* Fonts */,
 				A9EDB2DB2A5C50CF00C1A91E /* RiveAssets */,
 				A9EDB2D12A5C506100C1A91E /* Preview Content */,
 				A9EDB2ED2A5C515D00C1A91E /* OnboardingView.swift */,
+				A9E1E9622A5EF05800AE5DD4 /* CustomFont.swift */,
 			);
 			path = SwiftUI_SampleApp;
 			sourceTree = "<group>";
@@ -165,12 +187,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E1E9602A5EEE6500AE5DD4 /* Inter-SemiBold.ttf in Resources */,
 				A9EDB2E72A5C50CF00C1A91E /* shapes.riv in Resources */,
 				A9EDB2E52A5C50CF00C1A91E /* check.riv in Resources */,
 				A9EDB2D32A5C506100C1A91E /* Preview Assets.xcassets in Resources */,
 				A9EDB2E62A5C50CF00C1A91E /* menu_button.riv in Resources */,
 				A9EDB2E32A5C50CF00C1A91E /* house.riv in Resources */,
 				A9EDB2E82A5C50CF00C1A91E /* button.riv in Resources */,
+				A9E1E95E2A5EEE6500AE5DD4 /* Inter-Regular.ttf in Resources */,
+				A9E1E95F2A5EEE6500AE5DD4 /* Poppins-Bold.ttf in Resources */,
 				A9EDB2D02A5C506100C1A91E /* Assets.xcassets in Resources */,
 				A9EDB2E42A5C50CF00C1A91E /* confetti.riv in Resources */,
 				A9EDB2E92A5C50CF00C1A91E /* icons.riv in Resources */,
@@ -185,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9EDB2EE2A5C515D00C1A91E /* OnboardingView.swift in Sources */,
+				A9E1E9632A5EF05800AE5DD4 /* CustomFont.swift in Sources */,
 				A9EDB2CE2A5C506100C1A91E /* ContentView.swift in Sources */,
 				A9EDB2CC2A5C506100C1A91E /* SwiftUI_SampleAppApp.swift in Sources */,
 			);
@@ -318,6 +344,7 @@
 				DEVELOPMENT_TEAM = RMQMMDFU8P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-SampleApp-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -347,6 +374,7 @@
 				DEVELOPMENT_TEAM = RMQMMDFU8P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-SampleApp-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
