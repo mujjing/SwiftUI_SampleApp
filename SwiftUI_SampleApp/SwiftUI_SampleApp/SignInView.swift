@@ -14,29 +14,31 @@ struct SignInView: View {
                 .customFont(textStyle: .largeTitle)
             Text("Access to 240+ hours of content. Learn design and code, by building real apps with React and Swift.")
                 .customFont(textStyle: .headline)
+                .padding(.top, 4)
+                .padding(.bottom, 16)
             
-            VStack {
+            VStack(alignment: .leading) {
                 Text("Email")
                     .customFont(textStyle: .subheadline)
                     .foregroundColor(.secondary)
                 TextField("", text: $email)
-                    .padding(15)
-                    .padding(.leading, 36)
-                    .background(.white)
-                    .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .stroke()
-                            .fill(.black.opacity(0.1))
-                    )
-                    .overlay(
-                        Image("Icon Email")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 8)
-                    )
+                    .customTextField()
             }
             
-            Divider()
+            VStack(alignment: .leading) {
+                Text("Password")
+                    .customFont(textStyle: .subheadline)
+                    .foregroundColor(.secondary)
+                TextField("", text: $password)
+                    .customTextField(image: Image("Icon Lock"))
+            }
+            
+            HStack {
+                Rectangle().frame(height: 1).opacity(0.1)
+                Text("QR").customFont(textStyle: .subheadline2)
+                    .foregroundColor(.black.opacity(0.3))
+                Rectangle().frame(height: 1).opacity(0.1)
+            }
             
             Text("Sign up with Email, Apple or Google")
                 .customFont(textStyle: .subheadline)
