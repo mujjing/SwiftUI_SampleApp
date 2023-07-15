@@ -20,7 +20,7 @@ struct OnboardingView: View {
                 .ignoresSafeArea()
             
             if showModal {
-                SignInView()
+                SignInView(showModal: $showModal)
                     .transition(.move(edge: .top).combined(with: .opacity))
                     .overlay(
                         Button{
@@ -68,7 +68,7 @@ struct OnboardingView: View {
                         .offset(y: 10)
                 )
                 .onTapGesture {
-                    try? button.play(animationName: "active")
+                    button.play(animationName: "active")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                         withAnimation(.spring()) {
                             showModal = true
