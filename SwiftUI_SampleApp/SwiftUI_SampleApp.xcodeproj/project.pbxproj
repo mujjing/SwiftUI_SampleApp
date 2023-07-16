@@ -65,6 +65,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9CA00272A62ED7B00799291 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDB2ED2A5C515D00C1A91E /* OnboardingView.swift */,
+				A95E2B2B2A6044DD00F87D6E /* SignInView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A9CA00282A62ED8300799291 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				A9E1E9622A5EF05800AE5DD4 /* CustomFont.swift */,
+				A95E2B2D2A60488C00F87D6E /* CustomTextField.swift */,
+				A9AAB4362A62D4A50040F995 /* Extensions.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		A9E1E95A2A5EEE6500AE5DD4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +120,8 @@
 				A9E1E95A2A5EEE6500AE5DD4 /* Fonts */,
 				A9EDB2DB2A5C50CF00C1A91E /* RiveAssets */,
 				A9EDB2D12A5C506100C1A91E /* Preview Content */,
-				A9EDB2ED2A5C515D00C1A91E /* OnboardingView.swift */,
-				A9E1E9622A5EF05800AE5DD4 /* CustomFont.swift */,
-				A95E2B2B2A6044DD00F87D6E /* SignInView.swift */,
-				A95E2B2D2A60488C00F87D6E /* CustomTextField.swift */,
-				A9AAB4362A62D4A50040F995 /* Extensions.swift */,
+				A9CA00272A62ED7B00799291 /* Views */,
+				A9CA00282A62ED8300799291 /* Styles */,
 			);
 			path = SwiftUI_SampleApp;
 			sourceTree = "<group>";
