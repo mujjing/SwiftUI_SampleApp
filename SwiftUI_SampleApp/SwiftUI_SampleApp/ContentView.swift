@@ -1,15 +1,27 @@
 //
 //  ContentView.swift
-//  SwiftUI_SampleApp
-//
-//  Created by 전지훈 on 2023/07/10.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("selectedTab") var selectedTab: Tab = .chat
     var body: some View {
-        OnboardingView()
+        ZStack {
+            switch selectedTab {
+            case .chat:
+                OnboardingView()
+            case .search:
+                Text("Search")
+            case .timer:
+                Text("Timer")
+            case .bell:
+                Text("Bell")
+            case .user:
+                Text("User")
+            }
+            TabBar()
+        }
     }
 }
 
