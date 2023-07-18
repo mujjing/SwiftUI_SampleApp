@@ -11,18 +11,28 @@ struct ContentView: View {
     let button = RiveViewModel(fileName: "menu_button", stateMachineName: "State Machine", autoPlay: false)
     var body: some View {
         ZStack {
-            switch selectedTab {
-            case .chat:
-                OnboardingView()
-            case .search:
-                Text("Search")
-            case .timer:
-                Text("Timer")
-            case .bell:
-                Text("Bell")
-            case .user:
-                Text("User")
+            Group {
+                switch selectedTab {
+                    case .chat:
+                        HomeView()
+                    case .search:
+                        Text("Search")
+                    case .timer:
+                        Text("Timer")
+                    case .bell:
+                        Text("Bell")
+                    case .user:
+                        Text("User")
+                }
             }
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: 80)
+            }
+            .safeAreaInset(edge: .top) {
+                Color.clear.frame(height: 104)
+            }
+            .ignoresSafeArea()
+
             
             button.view()
                 .frame(width: 44, height: 44)
