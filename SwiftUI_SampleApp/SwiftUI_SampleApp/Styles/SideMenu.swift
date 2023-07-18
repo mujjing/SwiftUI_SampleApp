@@ -6,6 +6,8 @@ import SwiftUI
 import RiveRuntime
 
 struct SideMenu: View {
+    @State var selectedMenu: SelectedMenu = .home
+    @State var isDarkMode = false
     let icon = RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME")
     
     var body: some View {
@@ -43,25 +45,50 @@ struct SideMenu: View {
                         .frame(height: 1)
                         .opacity(0.1)
                         .padding(.horizontal)
-                    HStack(spacing: 14) {
-                        item.icon.view()
-                            .frame(width: 32, height: 32)
-                            .opacity(0.6)
-                        Text(item.text)
-                            .customFont(textStyle: .headline)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(12)
-                    .onTapGesture {
-                        try? item.icon.setInput("active", value: true)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            try? item.icon.setInput("active", value: false)
-                        }
+                    MenuRow(item: item, selectedMenu: $selectedMenu)
                 }
+            }
+            .padding(8)
+            
+            Text("HISTORY")
+                .customFont(textStyle: .subheadline2)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 24)
+                .padding(.top, 40)
+                .opacity(0.7)
+            
+            VStack(alignment: .leading, spacing: 0) {
+                Rectangle()
+                    .frame(height: 1)
+                    .opacity(0.1)
+                    .padding()
+                ForEach(menuItems2) { item in
+                    Rectangle()
+                        .frame(height: 1)
+                        .opacity(0.1)
+                        .padding(.horizontal)
+                    MenuRow(item: item, selectedMenu: $selectedMenu)
                 }
             }
             .padding(8)
             Spacer()
+            
+            HStack(spacing: 14) {
+                menuItems3[0].icon.view()
+                    .frame(width: 32, height: 32)
+                    .opacity(0.6)
+                    .onChange(of: isDarkMode) { newValue in
+                        if newValue {
+                            try? menuItems3[0].icon.setInput("active", value: true)
+                        } else {
+                            try? menuItems3[0].icon.setInput("active", value: false)
+                        }
+                    }
+                Text(menuItems3[0].text)
+                    .customFont(textStyle: .headline)
+                Toggle("", isOn: $isDarkMode)
+            }
+            .padding(20)
         }
         .foregroundColor(.white)
         .frame(maxWidth: 288, maxHeight: .infinity)
@@ -71,21 +98,35 @@ struct SideMenu: View {
     }
 }
 
-struct SideMenu_Previews: PreviewProvider {
-    static var previews: some View {
-        SideMenu()
-    }
-}
-
 struct MenuItem: Identifiable {
     var id = UUID()
     var text: String
     var icon: RiveViewModel
+    var menu: SelectedMenu
 }
 
 var menuItems = [
-    MenuItem(text: "Home", icon: RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME")),
-    MenuItem(text: "Search", icon: RiveViewModel(fileName: "icons", stateMachineName: "SEARCH_interactivity", artboardName: "SEARCH")),
-    MenuItem(text: "Favorites", icon: RiveViewModel(fileName: "icons", stateMachineName: "STAR_interactivity", artboardName: "LIKE/STAR")),
-    MenuItem(text: "Help", icon: RiveViewModel(fileName: "icons", stateMachineName: "CHAT_interactivity", artboardName: "CHAT"))
+    MenuItem(text: "Home", icon: RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME"), menu: .home),
+    MenuItem(text: "Search", icon: RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME"), menu: .search),
+    MenuItem(text: "Favorites", icon: RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME"), menu: .favorites),
+    MenuItem(text: "Help", icon: RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME"), menu: .help)
 ]
+
+var menuItems2 = [
+    MenuItem(text: "History", icon: RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME"), menu: .history),
+    MenuItem(text: "Notifications", icon: RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME"), menu: .notification)
+]
+
+var menuItems3 = [
+    MenuItem(text: "Dark Mode", icon: RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME"), menu: .darkmode)
+]
+
+enum SelectedMenu: String {
+    case home
+    case search
+    case favorites
+    case help
+    case history
+    case notification
+    case darkmode
+}
